@@ -11,16 +11,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --red: #cc0000;
-      --dark: #333;
-      --mid: #666;
-      --light: #999;
-      --border: #ddd;
+      --red: #E74C3C;
+      --dark: #1F618D;
+	  --text: #2C3E50;
+      --mid: #7F8C8D;
+      --light: #BDC3C7;
+	  --bg-page: #F4F6F7;
+      --border: #D5DBDB;
       --serif: 'Newsreader', Georgia, serif;
       --sans: 'Roboto Condensed', Arial, sans-serif;
     }
 
-    body { font-family: var(--serif); -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--serif); -webkit-font-smoothing: antialiased; background-color: var(--bg-page);color: var(--text);}
 
     .wordmark {
       font-family: var(--sans);
@@ -61,7 +63,7 @@
       margin-bottom: 12px;
     }
     h1 {
-      font-size: clamp(36px, 6vw, 58px);
+      font-size: clamp(36px, 6vw, 43px);
       font-weight: 700;
       line-height: 1.1;
       color: var(--dark);
@@ -80,7 +82,7 @@
     .byline {
       font-family: var(--sans);
       font-size: 13px;
-      color: var(--mid);
+      color: var(--dark);
       margin-bottom: 20px;
     }
     .byline strong { color: var(--dark); }
@@ -90,15 +92,35 @@
       line-height: 1.75;
       margin-bottom: 18px;
       font-weight: 400;
+	  color: var(--text);
+    }
+	.highlight {
+      color: var(--dark);;
+      font-weight: 700;
+	}
+	
+	.sources {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-family: var(--sans);
+      font-size: 13px;
+	  color: var(--light);
+	  line-height: 1.6;
+    }
+	.sources strong {
+      color: var(--mid);
+	  text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     /* FIGURE */
-    figure { margin: 28px -100px 24px; }
-    figure img { width: 100%; display: block; border: 1px solid var(--border); }
+    figure { margin: 28px 100px 24px; }
+    figure img { width: 100%; display: block; border: none; border-radius: 10px ; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
     figcaption {
       font-family: var(--sans);
       font-size: 12px;
-      color: var(--light);
+      color: var(--mid);
       margin-top: 6px;
       text-align: center;
     }
@@ -121,27 +143,50 @@
 
     <header>
       <p class="kicker">Diseño y visualización de información</p>
-      <h1>Este es un gran título<br>largo de la cuestión</h1>
+      <h1>Hitos en la historia de la visualización de datos e información</h1>
     </header>
 
     <article>
-      <h2>Una pequeña bajada</h2>
-      <p class="byline">Por <strong>Nombre</strong>, <strong>Nombre</strong>, <strong>Nombre</strong> y <strong>Nombre</strong></p>
-
-      <p>The escalating U.S.–Israeli war with Iran and Tehran's retaliation against Gulf neighbours have severely disrupted Middle Eastern energy infrastructure and global oil and gas flows. Israeli strikes on Iran's South Pars gas field and the Asaluyeh processing hub on March 18 triggered a wave of retaliatory attacks across the Gulf that hit refineries, gas plants and export terminals in Saudi Arabia, Kuwait, Qatar, the United Arab Emirates and Bahrain.</p>
-
-      <figure>
-        <img src="bloque.webp" alt="Map of affected energy infrastructure">
-        <figcaption>Source: Institute for the Study of War</figcaption>
+      <h2>Climate Change Spiral Visualizations 2022</h2>
+      <p class="byline">Por <strong>Constanza Pavez</strong>, <strong>Antonia Pizarro</strong>, <strong>Vicente Tapia</strong>, <strong>Fabián Valenzuela<strong/> y <strong>Paloma Vargas</strong></p>
+      <p>La <span class="highlight">Climate Change Spiral Visualizations (2022)</span> nació de la necesidad crítica de romper la barrera entre los datos científicos complejos y el entendimiento del público. El climatólogo <span class="highlight">Ed Hawkins</span> ideó este concepto para sustituir las gráficas de líneas tradicionales, demasiado académicas, por una narrativa visual que cualquier persona pudiera "sentir", intentando resolver no solo la falta de información, sino la falta de percepción de urgencia.</p>
+	  <p>A través de una versión sencilla de 2016 que Hawkins publicó en Twitter y que ha evolucionado hasta las versiones tridimensionales de la NASA, la pieza responde con claridad el estado de salud de nuestro planeta, expresado mediante la anomalía de la temperatura global y situándonos en un eje temporal que va desde 1850 hasta la actualidad.</p>
+      
+	  <figure>
+        <img src="global_temperature_spiral.gif" alt="Animated spiral of changes in global temperature | Climate Visuals">
+        <figcaption>Source: Royal geographical society</figcaption>
       </figure>
-
-      <p>Multiple key facilities have been damaged or shut. Drone and missile attacks struck refineries and LNG plants in Saudi Arabia, Kuwait and Qatar, while missile debris forced the shutdown of the UAE's massive Habshan gas complex and repeated attacks targeted its Fujairah export terminal.</p>
-      <p>The sites now under threat collectively account for a significant portion of global reserves, underscoring the scale of the shock to energy markets and consumers.</p>
-    </article>
+	  
+	  <h2>Análisis de Información</h2>
+	  <p>Basándonos en <span class="highlight">los 5 modos en la información</span> podemos concluir que el apropiado para el gráfico de Hawkins sería <span class="highlight">Estructura de Interacción</span>, la cual define la información como una organización de datos que permite a un agente (humano o máquina) detectar diferencias y entender su entorno. El cual vendría a ser todo el punto de este gráfico, retratar de una forma clara y con urgencia el cambio climático.</p>
+	  
+	  <h2>Análisis Técnico</h2>
+	  <p>La <span class="highlight">Ley 19.628</span> protege al individuo del mal uso de su identidad, pero la ciencia climática opera en una escala donde el individuo se desvanece para dar paso a la especie, por lo tanto, el gráfico de Hawkins se construyó en base a datos estadísticos. Según el <span class="highlight">Artículo 2°</span>, <span class="highlight">letra e)</span> de esta ley, el dato estadístico es aquel que "no puede ser asociado a un titular identificado o identificable". También es relevante destacar el <span class="highlight">Artículo 2°</span>, <span class="highlight">letra g)</span>, que define a los datos sensibles como <span class="highlight">“aquellos datos personales que se refieren a las características físicas o morales de las personas o a hechos o circunstancias de su vida privada o intimidad, tales como los hábitos personales, el origen racial, las ideologías y opiniones políticas, las creencias o convicciones religiosas, los estados de salud físicos o psíquicos y la vida sexual”</span>. Sabido esto, es imposible el involucramiento de datos personales o sensibles en la visualización del cambio climático, ya que la temperatura de la estratosfera o del océano no revela la intimidad de nadie.</p>
+	  
+	  <h2>Legado</h2>
+      <p>Si bien la representación en espiral tridimensional ha tenido escasa adopción reciente, su lógica visual persiste en adaptaciones bidimensionales que conservan sus principios estructurales: tiempo como rotación, magnitud como distancia radial y color como variable semántica.</p>
+      <p>Un caso representativo es el software <span class="highlight">sigminer</span>, desarrollado en genómica oncológica. Su gráfico de espiral opera como mapa de <span class="highlight">priorización clínica</span>: cada punto corresponde a una posición genómica, la distancia radial codifica la frecuencia de una mutación en la población estudiada y el color indica la severidad del daño funcional. Esto permite al oncólogo reducir el ruido de grandes volúmenes de datos genómicos y concentrarse en las mutaciones con mayor relevancia clínica, orientando tratamientos específicos para cada perfil tumoral.</p>
+    
+	  <figure>
+        <img src="sigminer.png" alt="Stats chart sigminer | Mutational Signature Analysis">
+        <figcaption>Source: Mutational Signature Miner in R</figcaption>
+      </figure>
+	  
+	  <section class="sources">
+      <p><strong>Fuentes y Referencias</strong></p>
+      <p>Animated spiral of changes in global temperature (1850-2025). (n.d.). https://www.rgs.org/about-us/what-is-geography/geovisualisation/global-temperature-animated-spiral.</p>
+	  <p>Climate spirals. (n.d.). Climate Visuals. https://ed-hawkins.github.io/climate-visuals/spirals.html</p>
+      <p>Harvey, C. (2021, October 27). Scientists have found a perfect illustration of how the climate is spiraling ‘out of control.’ The Washington Post. https://www.washingtonpost.com/news/energy-environment/wp/2016/07/28/these-climate-spirals-perfectly-illustrate-the-human-hand-in-global-climate-change/</p>
+      <p>Del Congreso Nacional, B. (2023, May 9). Biblioteca del Congreso Nacional. www.bcn.cl/leychile. https://www.bcn.cl/leychile/navegar?idNorma=141599</p>
+	  <p>Mutational Signature Miner in r. (n.d.). https://shixiangwang.github.io/sigminer/#arrow_down-download-stats</p>
+	 </section>
+	 
+	 </article>
 
   </div>
 
   <footer>Diseño y visualización de información</footer>
 
 </body>
+
 </html>
